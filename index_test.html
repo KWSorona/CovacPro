@@ -1,0 +1,33 @@
+<html>
+   <head>
+      <title>chart.js 2.1</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.0/moment.min.js"></script>
+
+	</head>
+	<body>
+		<div style="width:600px">
+			<canvas id="myChart"></canvas>
+		</div>
+		<script>
+		const today = moment();
+
+		var canvas = document.getElementById('myChart');
+		var data = {
+		    labels: [moment().format("YYYY-MM-DD"), today.add(1,"days").format("YYYY-MM-DD"), today.add(1,"days").format("YYYY-MM-DD"), today.add(1,"days").format("YYYY-MM-DD")],
+		    type: "line",
+		    datasets: [
+		        {
+		            data: [ 120,21, 32,100],
+		        }
+		    ]
+		};
+
+		var myBarChart = Chart.Line(canvas,{
+			data:data,
+		});
+</script>
+	</body>
+</html>
